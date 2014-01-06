@@ -1,0 +1,19 @@
+{
+  "name": "Remove requirement to use Citibank virtual keyboard",
+  "description": "",
+  "version": "0.1",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts" : [
+    {
+      "matches" : [
+        "https://www.citibank.com.br/BRGCB/JPS/portal/*"
+      ],
+      "js" : ["removevk.js"],
+      "run_at" : "document_start",
+      "all_frames" : false
+    }
+  ],
+  "manifest_version": 2
+}
