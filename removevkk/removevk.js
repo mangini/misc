@@ -4,9 +4,13 @@ window.addEventListener('load', function() {
   setTimeout( function() {
     console.log("removevk: disabling virtual keyboard");
     var pwd=document.querySelector('input[type="password"]');
-    pwd.removeAttribute("onfocus");
-    pwd.removeAttribute("onclick");
-    pwd.onkeypress=null;
+    if (pwd) {
+      pwd.removeAttribute("onfocus");
+      pwd.removeAttribute("onclick");
+      pwd.onkeypress=null;
+      elClone = pwd.cloneNode(true);
+      pwd.parentNode.replaceChild(elClone, pwd);
+    }
   }, 300);
 });
 
